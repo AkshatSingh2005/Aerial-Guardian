@@ -2,6 +2,7 @@ from ultralytics import YOLO
 import supervision as sv
 import cv2
 import os
+import time
 
 # Load model
 model = YOLO("yolov8n.pt")
@@ -34,11 +35,16 @@ from collections import defaultdict, deque
 
 track_history = defaultdict(lambda: deque(maxlen=30))
 
+start_time = time.time()
+frame_count = 0
+
 for frame_name in frames:
 
     frame_path = os.path.join(sequence_path, frame_name)
 
     frame = cv2.imread(frame_path)
+
+    frame_count += 1
 
     results = model(frame, verbose=False)[0]
 
@@ -99,5 +105,13 @@ for frame_name in frames:
     print(frame_name)
 
 video_writer.release()
+
+elapsed = time.time() - start_time
+
+fps = frame_count / elapsed
+
+print(f"\nFrames processed: {frame_count}")
+print(f"Time taken: {elapsed:.2f} seconds")
+print(f"FPS: {fps:.2f}")
 
 print("Done")

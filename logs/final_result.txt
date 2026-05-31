@@ -1,0 +1,26 @@
+Project: Aerial Guardian
+
+Dataset:
+VisDrone2019-MOT Validation Set
+
+Baseline Detection:
+Persons Detected = 20
+
+Tiled Detection:
+Raw Detections = 39
+After NMS = 37
+
+Improvement:
+85%
+
+Tracking:
+Frames Processed = 464
+Time Taken = 12.26 sec
+FPS = 37.83
+
+Models:
+Detector = YOLOv8n
+Tracker = ByteTrack
+
+Contribution:
+2x2 Tiled Inference + NMS for improved small-object detection

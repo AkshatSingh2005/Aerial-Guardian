@@ -1,0 +1,9 @@
+Baseline Persons: 20
+Tile 1: 15 persons
+Tile 2: 6 persons
+Tile 3: 13 persons
+Tile 4: 5 persons
+
+Raw Tile Detections: 39
+Final Persons After NMS: 37
+Saved: tiled_nms_output.jpg
