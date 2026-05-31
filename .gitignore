@@ -5,7 +5,7 @@ __pycache__/
 data/
 
 
-*.mp4
+
 *.avi
 
 .DS_Store
